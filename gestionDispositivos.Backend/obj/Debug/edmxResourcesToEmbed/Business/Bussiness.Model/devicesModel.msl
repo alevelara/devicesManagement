@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="devicesModelStoreContainer" CdmEntityContainer="devicesEntities">
+    <EntitySetMapping Name="gateway">
+      <EntityTypeMapping TypeName="devicesModel.gateway">
+        <MappingFragment StoreEntitySet="gateway">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="port" ColumnName="port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="light_meter">
+      <EntityTypeMapping TypeName="devicesModel.light_meter">
+        <MappingFragment StoreEntitySet="light_meter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="water_meter">
+      <EntityTypeMapping TypeName="devicesModel.water_meter">
+        <MappingFragment StoreEntitySet="water_meter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

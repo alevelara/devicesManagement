@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="devicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="gateway">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="port" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="light_meter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="water_meter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="devicesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="gateway" EntityType="Self.gateway" />
+    <EntitySet Name="light_meter" EntityType="Self.light_meter" />
+    <EntitySet Name="water_meter" EntityType="Self.water_meter" />
+  </EntityContainer>
+</Schema>

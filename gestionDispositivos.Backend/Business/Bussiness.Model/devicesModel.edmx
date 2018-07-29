@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="devicesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gateway">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serial_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="100" />
+          <Property Name="model" Type="nvarchar" MaxLength="100" />
+          <Property Name="ip" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="port" Type="nvarchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="light_meter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serial_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="100" />
+          <Property Name="model" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="water_meter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serial_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="100" />
+          <Property Name="model" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="devicesModelStoreContainer">
+          <EntitySet Name="gateway" EntityType="Self.gateway" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="light_meter" EntityType="Self.light_meter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="water_meter" EntityType="Self.water_meter" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="devicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gateway">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="port" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="light_meter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="water_meter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="devicesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gateway" EntityType="Self.gateway" />
+          <EntitySet Name="light_meter" EntityType="Self.light_meter" />
+          <EntitySet Name="water_meter" EntityType="Self.water_meter" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="devicesModelStoreContainer" CdmEntityContainer="devicesEntities">
+          <EntitySetMapping Name="gateway">
+            <EntityTypeMapping TypeName="devicesModel.gateway">
+              <MappingFragment StoreEntitySet="gateway">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="port" ColumnName="port" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="light_meter">
+            <EntityTypeMapping TypeName="devicesModel.light_meter">
+              <MappingFragment StoreEntitySet="light_meter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="water_meter">
+            <EntityTypeMapping TypeName="devicesModel.water_meter">
+              <MappingFragment StoreEntitySet="water_meter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
